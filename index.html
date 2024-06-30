@@ -79,7 +79,7 @@ const computerScore = 0;
         /*Increment humanScore or computerScore based on the round winner*/
 
 function playRound(humanChoice, computerChoice){
-        if(getHumanChoice === 'rock' && getComputerChoice === 'rock'){
+        if(humanChoice === 'rock' && computerChoice === 'rock'){
             alert('Draw! Rock equals Rock');
         } else if(humanChoice === 'rock' && computerChoice === 'paper'){
             alert('You Lose! Paper beats rock.');
