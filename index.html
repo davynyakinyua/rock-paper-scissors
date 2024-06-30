@@ -12,8 +12,9 @@
 /* Declare a function getComputerChoice that returns computer choice */
     /*Declare a variable choice */
     /* Declare a variable randomNum which outputs a random number between 1 - 3. */
-    /* Using a condition assign choice to return 'rock', 'paper' or 'scissors' 
-    based on randomNum*/
+    /* if randomNum equals one then choice is equal to 'rock'*/
+    /* else if randomNum equals to two then choice equals to 'paper'*/
+    /* else choice equals to 'scissors'*/
     /* Return choice*/
 
 
@@ -46,9 +47,43 @@ console.log(getComputerChoice());
     function getHumanChoice(){
         let choice = prompt('Choose one of the three "Rock", "Paper" or "Scissors"','Type').toLowerCase();
         return choice;
+
     }
 
+
     console.log(getHumanChoice());
+
+
+    /* Declare two variables humanScore and computerScore to keep track of the scores whose value is 0*/
+    const humanScore = 0;
+    const computerScore = 0;
+
+    /*Algorithm to play a single round*/
+    /* Declare a function playRound*/
+    /* Define two parameters for playRound: humanChoice and computerChoice that take getHumanChoice
+     and getComputerChoice as arguments*/
+        /*if humanChoice equals to 'rock' && computerChoice equals 'rock'*/
+            /*output 'Draw! Rock equals Rock'*/
+        /* else if humanChoice equals to 'rock' && computerChoice equals 'paper'*/
+            /*output 'You lose Paper beats rock'*/
+        /*else if humanChoice equals to 'rock' && computerChoice equals 'scissors'*/
+            /*output 'You Win! Rock beats scissors'*/
+        
+        /*else if humanChoice equals to 'paper' && computerChoice equals 'paper'*/
+                /*Output 'Draw! paper equals paper'*/
+        /*else if humanChoice equals to 'paper' && computerChoice equals 'rock'*/
+            /*Output 'You Win! Paper beats rock'*/
+        /* else if humanChoice equals to 'paper' && computerChoice equals 'scissors'*/
+            /*Output 'You Lose! scissors beats paper'*/
+        
+        /*else if humanChoice equals to 'scissors' && computerChoice equals to 'rock'*/
+            /*Output 'You Lose! Rock beats Scissors'*/
+        /*else if humanChoice equals to 'scissors' && computerChoice equals to 'paper'*/
+            /*Output 'You Win! Scissors beat Paper'*/
+        /*else output 'Draw! Scissors equal Scissors'*/
+
+        /*Increment humanScore or computerScore based on the round winner*/
+            
 
 
 </script>
