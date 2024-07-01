@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Rock paper scissors Game</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Rock paper scissors Game</title>
+</head>
 <body>
 <script>
     console.log('Hello world');
@@ -89,7 +89,7 @@ function playGame(){
             /*Output 'You Lose! Rock beats Scissors'*/
         /*else if humanChoice equals to 'scissors' && computerChoice equals to 'paper'*/
             /*Output 'You Win! Scissors beat Paper'*/
-        /*else output 'Draw! Scissors equal Scissors'*/
+        /*else if humanChoice equals draw && computerChoice equals draw output 'Draw! Scissors equal Scissors'*/
 
         /*Increment humanScore or computerScore based on the round winner*/
 
@@ -117,8 +117,10 @@ function playGame(){
         } else if(humanChoice === 'scissors' && computerChoice === 'paper'){
             alert('You Win! Scissors beats paper');
             ++humanScore;
-        } else{
+        } else if(humanChoice === 'draw' && computerChoice === 'draw'){
             alert('Draw! Scissors equal scissors.');
+        } else{
+            alert('invalid input');
         }        
     }   
     
