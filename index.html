@@ -41,8 +41,8 @@ function getComputerChoice(){
     /* Return choice*/
 
 function getHumanChoice(){
-    let choice = prompt('Choose one of the three "Rock", "Paper" or "Scissors"');
-    
+    let choice = prompt('Choose one of the three "Rock", "Paper" or "Scissors"').toLowerCase();
+
     console.log(choice);
 
     return choice;
@@ -58,7 +58,7 @@ let computerScore = 0;
 
 /*Logic to play the entire game*/
 /*Declare a new function playGame*/
-/*move the humanScore and computerScore inside the playGame function*/
+/*Declare humanSelection value of getHumanChoice and computerSection value of getComputerChoice*/
 /*move the function playRound into the function playGame*/
 /*call the playGame function 5 times to play five rounds*/
 /*if computerScore is greater than humanScore output 'You lose! Your Score vs computer score*/
@@ -127,7 +127,7 @@ function playGame(){
         }        
     }   
     
-    playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
+    playRound(humanSelection, computerSelection.toLowerCase());
 
     console.log('Computer score: ' + computerScore);
 
