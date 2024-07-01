@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Rock paper scissors Game</title>
     </head>
-    <body>
+<body>
 <script>
     console.log('Hello world');
 
@@ -48,9 +48,27 @@ function getHumanChoice(){
     return choice;
 }
 
+
 /* Declare two variables humanScore and computerScore to keep track of the scores whose value is 0*/
+
 let humanScore = 0;
+
 let computerScore = 0;
+   
+
+
+
+
+/*Logic to play the entire game*/
+/*Declare a new function playGame*/
+/*move the humanScore and computerScore inside the playGame function*/
+/*move the function playRound into the function playGame*/
+/*call the playGame function 5 times to play five rounds*/
+/*if computerScore is greater than humanScore output 'You lose! Your Score vs computer score*/
+/*else if humanScore is greater than computerScore output 'You Win! your score vs computer score'*/
+/*else output 'Draw! your score vs computer score'*/
+
+function playGame(){
 
     /*Algorithm to play a single round*/
     /* Declare a function playRound*/
@@ -78,7 +96,7 @@ let computerScore = 0;
 
         /*Increment humanScore or computerScore based on the round winner*/
 
-function playRound(humanChoice, computerChoice){
+    function playRound(humanChoice, computerChoice){
         if(humanChoice === 'rock' && computerChoice === 'rock'){
             alert('Draw! Rock equals Rock');
         } else if(humanChoice === 'rock' && computerChoice === 'paper'){
@@ -104,26 +122,38 @@ function playRound(humanChoice, computerChoice){
             ++humanScore;
         } else{
             alert('Draw! Scissors equal scissors.');
-        }
+        }        
+    }   
+    
+    playRound(getHumanChoice(), getComputerChoice());
+
+    console.log('Computer score: ' + computerScore);
+
+    console.log('Your score: ' + humanScore);
 }
+    
+playGame();
 
-playRound(getHumanChoice(), getComputerChoice());
+playGame();
 
-console.log('Computer score: ' + computerScore);
-console.log('Your score: ' + humanScore);
+playGame();
 
+playGame();
 
-/*Logic to play the entire game*/
-/*Declare a new function playGame*/
-/*move the humanScore and computerScore inside the playGame function*/
-/*move the function playRound into the function playGame*/
-/*call the playGame function 5 times to play five rounds*/
-/*if computerScore is greater than humanScore output 'You lose! Your Score vs computer score*/
-/*else if humanScore is greater than computerScore output 'You Win! your score vs computer score'*/
-/*else output 'Draw! your score vs computer score'*/
-            
+playGame();
+
+if(computerScore > humanScore){
+    alert('SORRY YOU LOST');
+    alert(`You: ${humanScore} VS Computer: ${computerScore}`);
+    } else if(computerScore < humanScore){
+        alert('CONGRATULATIONS! YOU WON');
+    alert(`You: ${humanScore} VS Computer: ${computerScore}`);
+    } else{
+        alert('DRAW');
+    alert(`You: ${humanScore} VS Computer: ${computerScore}`);
+    }
 
 
 </script>
-    </body>
+</body>
 </html>
