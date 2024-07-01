@@ -49,8 +49,8 @@ function getHumanChoice(){
 }
 
 /* Declare two variables humanScore and computerScore to keep track of the scores whose value is 0*/
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
     /*Algorithm to play a single round*/
     /* Declare a function playRound*/
@@ -83,24 +83,34 @@ function playRound(humanChoice, computerChoice){
             alert('Draw! Rock equals Rock');
         } else if(humanChoice === 'rock' && computerChoice === 'paper'){
             alert('You Lose! Paper beats rock.');
+            ++computerScore;
         } else if(humanChoice === 'rock' && computerChoice === 'scissors'){
             alert('You Win! Rock beats scissors');
+            ++humanScore;
+
         } else if(humanChoice === 'paper' && computerChoice  === 'paper'){
             alert('Draw! Paper equals Paper');
         } else if(humanChoice === 'paper' && computerChoice === 'rock'){
             alert('You Win! Paper beats rock.');
+            ++humanScore;
         } else if(humanChoice === 'paper' && computerChoice === 'scissors'){
             alert('You Lose! scissors beats paper.');
+            ++computerScore;
         } else if(humanChoice === 'scissors' && computerChoice === 'rock'){
             alert('You Lose! Rock beats scissors.');
+            ++computerScore;
         } else if(humanChoice === 'scissors' && computerChoice === 'paper'){
             alert('You Win! Scissors beats paper');
+            ++humanScore;
         } else{
             alert('Draw! Scissors equal scissors.');
         }
 }
 
 playRound(getHumanChoice(), getComputerChoice());
+
+console.log('Computer score: ' + computerScore);
+console.log('Your score: ' + humanScore);
 
             
 
