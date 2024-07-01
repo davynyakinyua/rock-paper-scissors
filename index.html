@@ -41,7 +41,7 @@ function getComputerChoice(){
     /* Return choice*/
 
 function getHumanChoice(){
-    let choice = prompt('Choose one of the three "Rock", "Paper" or "Scissors"').toLowerCase();
+    let choice = prompt('Choose one of the three "Rock", "Paper" or "Scissors"');
     
     console.log(choice);
 
@@ -66,6 +66,9 @@ let computerScore = 0;
 /*else output 'Draw! your score vs computer score'*/
 
 function playGame(){
+
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
 
     /*Algorithm to play a single round*/
     /* Declare a function playRound*/
@@ -124,7 +127,7 @@ function playGame(){
         }        
     }   
     
-    playRound(getHumanChoice(), getComputerChoice());
+    playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
 
     console.log('Computer score: ' + computerScore);
 
