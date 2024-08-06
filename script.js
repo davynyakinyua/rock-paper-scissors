@@ -34,10 +34,12 @@ function getHumanChoice(){
 // function to play a game of five rounds
 function playGame(){
     
+    //Declare two variables computer score and human score to hold the score of each round
     let computerScore = 0;
 
     let humanScore = 0;
 
+    //Declare a function playRound to play a single round of the game with two parameters
     function playRound(human, computer){
         let humanChoice = human().toLowerCase();
 
@@ -70,7 +72,10 @@ function playGame(){
 
     //A for loop to playRound function five times
     for(let i = 1; i < 6; i++){
+
+        //call the playRound function with two functions as arguments 
         playRound(getHumanChoice, getComputerChoice);
+        
     }
 
     //condition to display winner of the game in five rounds
