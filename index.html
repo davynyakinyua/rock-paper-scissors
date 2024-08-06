@@ -1,15 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Rock paper scissors Game</title>
-</head>
-<body>
-    <h1>To play the Game of "Rock paper scissors" choose one below.</h1>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-
-<script src="script.js"></script>
-</body>
-</html>
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Play Game of Rock paper scissors</title>
+            <style>
+                *{
+                    text-align:center;
+                    background-color:aliceblue;
+                    color:blue;
+                }
+    
+                hi{
+                    color:red;
+                    font-size:30px;
+                }
+                .btn-container{
+                    display:flex;
+                    gap:10px;
+                    justify-content:center;
+                    padding:10px;
+                }
+    
+                .content{
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    flex-direction:column;
+                    margin:120px;
+                }
+    
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <hi>Rock Paper Scissors</hi>
+            </div>
+            
+            <div class="content">
+                <h2>Choose one below to play the Game.</h2>
+                <img src="./psr.webp" alt="An image of rock paper scissors" height="auto" width="900px">
+            
+                <div class="btn-container">
+                    <button id="btn-rock">rock</button>
+                    <button id="btn-paper">paper</button>
+                    <button id="btn-scissors">scissors</button>
+                </div> 
+            </div>
+            
+            <div class="footer">
+                <div>
+                    @2024
+                </div>
+            </div>
+            <script src="./script.js"></script>
+        </body>
+    </html>
