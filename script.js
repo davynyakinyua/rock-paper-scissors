@@ -24,18 +24,20 @@ const div = document.createElement('div');
 const choiceComp = document.querySelector('.computerChoice');
 const choiceHum = document.querySelector('.humanChoice');
 const result = document.createElement('div');
+const final = document.createElement('div');
 
 
 
 
+//Declare two variables computer score and human score to hold the score of each round
+let computerScore = 0;
+
+let humanScore = 0;
 
 // function to play a game of five rounds
 function playGame(){
     
-    //Declare two variables computer score and human score to hold the score of each round
-    let computerScore = 0;
-
-    let humanScore = 0;
+    
 
     //Declare a function playRound to play a single round of the game with two parameters
     function playRound(human, computer){
@@ -71,6 +73,7 @@ function playGame(){
 
         result.textContent = `computer ${computerScore} vs You ${humanScore}`;
         content.appendChild(result);
+
     }; 
     
     // logic to get human choice from button click and call playRound
@@ -86,43 +89,46 @@ function playGame(){
         let choice = event.target.id;
 
         choiceHum.textContent = `You : ${choice}`;
+        
+        if((humanScore < 5) || (computerScore < 5)){
 
-        playRound(choice, getComputerChoice)
+            playRound(choice, getComputerChoice)
+
+        } else if((humanScore === 5) || (computerScore === 5)){
+            //condition to display winner of the game in five rounds
+            if((humanScore < 5) && (computerScore === 5)){
+                final.textContent = 'SORRY YOU LOST'; 
+                content.appendChild(final);
+            
+                } else if((humanScore === 5) && (computerScore < 5)){
+            
+                final.textContent = 'CONGRATULATIONS! YOU WON'; 
+                content.appendChild(final);
+            
+                } else if(humanScore === computerScore){
+            
+                final.textContent = 'DRAW -now';
+                content.appendChild(final);
+            
+                } else{
+            
+                console.log('click one of the button to play game');
+            
+                };
+        
+        };
+        
+        
+        
         });
 
     };
         
 
-    //condition to display winner of the game in five rounds
-    if(humanScore < computerScore){
-        console.log('SORRY YOU LOST'); 
-
-        console.log(`You: ${humanScore} VS Computer: ${computerScore}`); 
-
-    } else if(humanScore > computerScore){
-        
-        console.log('CONGRATULATIONS! YOU WON'); 
-
-        console.log(`You: ${humanScore} VS Computer: ${computerScore}`);
-
-    } else if(humanScore === computerScore){
-
-        console.log('DRAW');
-
-        console.log(`You: ${humanScore} VS Computer: ${computerScore}`);
-
-    } else{
-
-        console.log('click one of the button to play game');
-
-    };
-
 };
-
-
 
 
 
 playGame();
 
-
+// get the game to stop after first one to get 5 points
