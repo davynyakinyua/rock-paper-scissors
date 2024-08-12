@@ -13,10 +13,18 @@ function getComputerChoice(){
     } else{
         choice = 'scissors';
     }
-    console.log(`computer > ${choice}`);
+    choiceComp.textContent = `computer : ${choice}`;
     return choice;
 
-}
+};
+
+//create a div on the dom to display the messages currently on the logs
+const content = document.querySelector('.content');
+const div = document.createElement('div');
+const choiceComp = document.querySelector('.computerChoice');
+const choiceHum = document.querySelector('.humanChoice');
+
+
 
 
 // function to play a game of five rounds
@@ -35,28 +43,32 @@ function playGame(){
     
         if(humanChoice === computerChoice){
     
-            console.log(`Draw ${humanChoice} is equal to ${computerChoice}`); 
+            div.textContent = `Draw ${humanChoice} is equal to ${computerChoice}`;
+            content.appendChild(div);
     
         } else if((humanChoice === 'rock' && computerChoice === 'paper') |
         (humanChoice === 'paper' && computerChoice === 'scissors') |
         (humanChoice === 'scissors' && computerChoice =='rock')){
     
-            console.log(`You lose ${humanChoice} loses to ${computerChoice}`); 
+            div.textContent = `You lose ${humanChoice} loses to ${computerChoice}`;
+            content.appendChild(div);
             ++computerScore;
     
         } else if((humanChoice === 'rock' && computerChoice === 'scissors') |
         (humanChoice === 'paper' && computerChoice === 'rock') |
         (humanChoice === 'scissors' && computerChoice === 'paper')){
     
-            console.log(`You win ${humanChoice} beats ${computerChoice}`); 
+            div.textContent = `You win ${humanChoice} beats ${computerChoice}`; 
+            content.appendChild(div);
             ++humanScore;
         } else{
     
-            console.log('Invalid input'); 
+            div.textContent = 'Invalid input';
+            content.appendChild(div);
         }
 
-        console.log(`computer ${computerScore} vs You ${humanScore}`);
-    } 
+        //div.textContent = `computer ${computerScore} vs You ${humanScore}`;
+    }; 
     
     // logic to get human choice from button click and call playRound
     const buttons = document.querySelectorAll('button');
@@ -66,13 +78,13 @@ function playGame(){
     function getHumanChoice(button){
     
         button.addEventListener('click', (event) => {
-            console.log(event.target.id);
+        console.log(event.target.id);
 
-            let choice = event.target.id;
+        let choice = event.target.id;
 
-            console.log(choice);
+        choiceHum.textContent = `You : ${choice}`;
 
-            playRound(choice, getComputerChoice)
+        playRound(choice, getComputerChoice)
         });
 
     };
