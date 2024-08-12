@@ -29,7 +29,7 @@ function playGame(){
 
     //Declare a function playRound to play a single round of the game with two parameters
     function playRound(human, computer){
-        let humanChoice = human().toLowerCase();
+        let humanChoice = human;
 
         let computerChoice = computer();
     
@@ -58,7 +58,24 @@ function playGame(){
         console.log(`computer ${computerScore} vs You ${humanScore}`);
     } 
     
-    playRound(getHumanChoice, getComputerChoice);
+    // logic to get human choice from button click and call playRound
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(getHumanChoice);
+
+    function getHumanChoice(button){
+    
+        button.addEventListener('click', (event) => {
+            console.log(event.target.id);
+
+            let choice = event.target.id;
+
+            console.log(choice);
+
+            playRound(choice, getComputerChoice)
+        });
+
+    };
         
 
     //condition to display winner of the game in five rounds
@@ -73,16 +90,21 @@ function playGame(){
 
         console.log(`You: ${humanScore} VS Computer: ${computerScore}`);
 
-    } else{
-        alert('DRAW');
+    } else if(humanScore === computerScore){
+
+        console.log('DRAW');
 
         console.log(`You: ${humanScore} VS Computer: ${computerScore}`);
-    }
 
-}
+    } else{
+
+        console.log('click one of the button to play game');
+
+    };
+
+};
 
 
-// function to get human choice from prompt input
 
 
 
