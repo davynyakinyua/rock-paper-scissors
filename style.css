@@ -1,0 +1,30 @@
+*{
+    text-align:center;
+    background-color:aliceblue;
+    color:blue;
+}
+
+hi{
+    color:red;
+    font-size:30px;
+}
+.btn-container{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    padding:10px;
+}
+
+.content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin:120px;
+}
+
+.choice{
+    display:flex;
+    flex-direction:row;
+    gap:15px;
+}
