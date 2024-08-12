@@ -23,6 +23,8 @@ const content = document.querySelector('.content');
 const div = document.createElement('div');
 const choiceComp = document.querySelector('.computerChoice');
 const choiceHum = document.querySelector('.humanChoice');
+const result = document.createElement('div');
+
 
 
 
@@ -67,7 +69,8 @@ function playGame(){
             content.appendChild(div);
         }
 
-        //div.textContent = `computer ${computerScore} vs You ${humanScore}`;
+        result.textContent = `computer ${computerScore} vs You ${humanScore}`;
+        content.appendChild(result);
     }; 
     
     // logic to get human choice from button click and call playRound
