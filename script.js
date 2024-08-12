@@ -18,18 +18,6 @@ function getComputerChoice(){
 
 }
 
-// function to get human choice from prompt input
-function getHumanChoice(){
-    let choice = prompt('Choose rock, paper or scissors');
-    if(choice === ''){
-        alert('Enter input');
-        return choice = prompt('Choose rock, paper or scissors');
-    } 
-
-    console.log(`You > ${choice}`);
-
-    return choice;
-}
 
 // function to play a game of five rounds
 function playGame(){
@@ -47,56 +35,56 @@ function playGame(){
     
         if(humanChoice === computerChoice){
     
-            alert(`Draw ${humanChoice} is equal to ${computerChoice}`); 
+            console.log(`Draw ${humanChoice} is equal to ${computerChoice}`); 
     
         } else if((humanChoice === 'rock' && computerChoice === 'paper') |
         (humanChoice === 'paper' && computerChoice === 'scissors') |
         (humanChoice === 'scissors' && computerChoice =='rock')){
     
-            alert(`You lose ${humanChoice} loses to ${computerChoice}`); 
+            console.log(`You lose ${humanChoice} loses to ${computerChoice}`); 
             ++computerScore;
     
         } else if((humanChoice === 'rock' && computerChoice === 'scissors') |
         (humanChoice === 'paper' && computerChoice === 'rock') |
         (humanChoice === 'scissors' && computerChoice === 'paper')){
     
-            alert(`You win ${humanChoice} beats ${computerChoice}`); 
+            console.log(`You win ${humanChoice} beats ${computerChoice}`); 
             ++humanScore;
         } else{
     
-            alert('Invalid input'); 
+            console.log('Invalid input'); 
         }
 
         console.log(`computer ${computerScore} vs You ${humanScore}`);
-    }
-
-    //A for loop to playRound function five times
-    for(let i = 1; i < 6; i++){
-
-        //call the playRound function with two functions as arguments 
-        playRound(getHumanChoice, getComputerChoice);
+    } 
+    
+    playRound(getHumanChoice, getComputerChoice);
         
-    }
 
     //condition to display winner of the game in five rounds
     if(humanScore < computerScore){
-        alert('SORRY YOU LOST'); 
+        console.log('SORRY YOU LOST'); 
 
-        alert(`You: ${humanScore} VS Computer: ${computerScore}`); 
+        console.log(`You: ${humanScore} VS Computer: ${computerScore}`); 
 
     } else if(humanScore > computerScore){
         
-        alert('CONGRATULATIONS! YOU WON'); 
+        console.log('CONGRATULATIONS! YOU WON'); 
 
-        alert(`You: ${humanScore} VS Computer: ${computerScore}`);
+        console.log(`You: ${humanScore} VS Computer: ${computerScore}`);
 
     } else{
         alert('DRAW');
 
-        alert(`You: ${humanScore} VS Computer: ${computerScore}`);
+        console.log(`You: ${humanScore} VS Computer: ${computerScore}`);
     }
 
 }
+
+
+// function to get human choice from prompt input
+
+
 
 playGame();
 
