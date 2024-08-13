@@ -74,6 +74,7 @@ function playGame(){
         result.textContent = `computer ${computerScore} vs You ${humanScore}`;
         content.appendChild(result);
 
+
     }; 
     
     // logic to get human choice from button click and call playRound
@@ -84,41 +85,27 @@ function playGame(){
     function getHumanChoice(button){
     
         button.addEventListener('click', (event) => {
-        console.log(event.target.id);
+            console.log(event.target.id);
 
-        let choice = event.target.id;
+            let choice = event.target.id;
 
-        choiceHum.textContent = `You : ${choice}`;
+            choiceHum.textContent = `You : ${choice}`;
         
-        if((humanScore < 5) || (computerScore < 5)){
+        
 
-            playRound(choice, getComputerChoice)
+            if(humanScore < 5 && computerScore < 5){
+    
+                playRound(choice, getComputerChoice);
 
-        } else if((humanScore === 5) || (computerScore === 5)){
-            //condition to display winner of the game in five rounds
-            if((humanScore < 5) && (computerScore === 5)){
-                final.textContent = 'SORRY YOU LOST'; 
+                console.log(`computer score ${computerScore} and you ${humanScore}`);
+        
+            } else if(humanScore < 5 && computerScore === 5){
+                final.textContent = 'SORRY YOU LOST';
                 content.appendChild(final);
-            
-                } else if((humanScore === 5) && (computerScore < 5)){
-            
-                final.textContent = 'CONGRATULATIONS! YOU WON'; 
+            } else if(humanScore === 5 && computerScore < 5){
+                final.textContent = 'CONGRATULATIONS! YOU WON';
                 content.appendChild(final);
-            
-                } else if(humanScore === computerScore){
-            
-                final.textContent = 'DRAW -now';
-                content.appendChild(final);
-            
-                } else{
-            
-                console.log('click one of the button to play game');
-            
-                };
-        
-        };
-        
-        
+            };
         
         });
 
@@ -129,6 +116,7 @@ function playGame(){
 
 
 
+
+
 playGame();
 
-// get the game to stop after first one to get 5 points
